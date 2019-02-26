@@ -15,28 +15,18 @@ public class DiceController {
     return "dice";
   }
 
-//  @GetMapping("/dice/{guess}")
-//  public String guess(@PathVariable Integer guess) {
-//    return "dice";
-//  }
 
   @GetMapping("/roll-dice/{n}")
   public String diceRoll(@PathVariable Integer n, Model model) {
     Random rand = new Random();
     Integer roll = rand.nextInt(7);
-    String answer =  guessRight(n, roll);
+    Boolean rightAnswer = (n == roll);
     model.addAttribute("guess", n);
     model.addAttribute("dice", roll);
-    model.addAttribute("right-wrong", answer);
+    model.addAttribute("right-answer", rightAnswer);
     return "dice";
   }
 
-  public String guessRight(Integer n, Integer roll){
-    if(n != roll) {
-      return "wrong";
-    }
-    return "right";
-  }
 
 
 
