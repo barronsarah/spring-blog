@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Roll the dice!</title>
+</head>
+<body>
+    Roll the dice!<br />
+
+    <p>Take a guess at what a dice will roll. Click a link above for your guess</p>
+    <nav>
+        <ul>
+            <li><a th:href="@{/roll-dice/1}">Number: 1</a></li>
+            <li><a th:href="@{/roll-dice/2}">Number: 2</a></li>
+            <li><a th:href="@{/roll-dice/3}">Number: 3</a></li>
+            <li><a th:href="@{/roll-dice/4}">Number: 4</a></li>
+            <li><a th:href="@{/roll-dice/5}">Number: 5</a></li>
+            <li><a th:href="@{/roll-dice/6}">Number: 6</a></li>
+        </ul>
+    </nav>
+
+    <p>The dice rolled: <span th:text="${dice}"></span></p>
+
+    <p>You guessed: <span th:text="${guess}"></span></p>
+
+    <!--<p>Your guess was <span th:text="${right-wrong}"></span></p>-->
+
+</body>
+</html>

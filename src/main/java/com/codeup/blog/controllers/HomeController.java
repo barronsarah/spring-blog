@@ -12,6 +12,7 @@ class HomeController {
     return "This is the landing page!";
   }
 
+//  Lecture Demo
 //  @GetMapping("/hello")
 //  @ResponseBody
 //  public String hello(){
@@ -40,10 +41,5 @@ class HomeController {
 //    return names;
 //  }
 
-  @Controller
-  public static class MathController {
 
-  //@PostMapping("")
-
-  }
 }
