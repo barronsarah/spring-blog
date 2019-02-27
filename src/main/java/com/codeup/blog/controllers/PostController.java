@@ -1,27 +1,40 @@
 package com.codeup.blog.controllers;
 
 import com.codeup.blog.Post.Post;
+import com.codeup.blog.Post.PostRepository;
 import com.codeup.blog.Post.PostsList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class PostController {
 
+  private final PostRepository postDao;
+
+  public PostController(PostRepository postDao) {
+    this.postDao = postDao;
+  }
+
+
   @GetMapping("/posts")
   public String postsIndex(Model model){
-    List<Post> posts = PostsList.all();
-    model.addAttribute("posts", posts);
+//    List<Post> posts = new ArrayList<>();
+//    posts.add(new Post(1,"Life Before Tech", "Hear about my journey that led me into tech!"));
+//    posts.add((new Post(2, "A Student Again", "The experience of going to a Full Stack Bootcamp")));
+//    model.addAttribute("posts", posts);
     return "posts/index";
   }
 
   @GetMapping("posts/{id}")
-  @ResponseBody
-  public String getPostId(@PathVariable Integer id){
-    return "Here is the post for " + id;
+  public String getPostId(@PathVariable Integer id, Model model){
+    Post post = new Post(id                                , "Hello World", "Here is a single post");
+    model.addAttribute("post", post);
+
+    return "posts/show";
   }
 
 //  @GetMapping("/posts/{id}")
@@ -34,9 +47,8 @@ public class PostController {
 
 
   @GetMapping("posts/create")
-  @ResponseBody
   public String createPost(){
-    return "Here is the page to create a post";
+    return "posts/create";
   }
 
   @PostMapping("posts/create")

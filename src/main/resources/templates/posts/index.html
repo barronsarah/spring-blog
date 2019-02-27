@@ -10,10 +10,13 @@
 
     <main>
         <div th:each="post : ${posts}">
-            <h2 th:href="@{/posts/{id}(id=${post.getId()})}">
-                <span th:text="${post.getTitle()}"></span>
-            </h2>
-            <p th:text="${post.getTextBody()}"></p>
+            <h1 th:text="${post.title}"></h1>
+            <p th:text="${post.body}"></p>
+
+            <!--<h2 th:href="@{/posts/{id}(id=${post.id})}">-->
+                <!--<span th:text="${post.getTitle()}"></span>-->
+            <!--</h2>-->
+            <!--<p th:text="${post.getTextBody()}"></p>-->
         </div>
     </main>
 

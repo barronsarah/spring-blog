@@ -1,14 +1,21 @@
 package com.codeup.blog.Post;
 
-public class Post {
-  private Integer id;
-  private String title;
-  private String textBody;
+import javax.persistence.*;
 
-  public Post(Integer id, String title, String textBody) {
+@Entity
+@Table(name="posts")
+public class Post {
+  @GeneratedValue
+  private Integer id;
+  @Column(nullable = false, length = 125)
+  private String title;
+  @Column(nullable = false, length = 225)
+  private String body;
+
+  public Post(Integer id, String title, String body) {
     this.id = id;
     this.title = title;
-    this.textBody = textBody;
+    this.body = body;
   }
 
   public Integer getId() {
@@ -27,11 +34,11 @@ public class Post {
     this.title = title;
   }
 
-  public String getTextBody() {
-    return textBody;
+  public String getBody() {
+    return body;
   }
 
-  public void setTextBody(String textBody) {
-    this.textBody = textBody;
+  public void setBody(String body) {
+    this.body = body;
   }
 }
