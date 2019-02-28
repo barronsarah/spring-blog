@@ -19,18 +19,18 @@
 
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<!--[if lt IE 8 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<html>
+<!--<head th:replace="fragments :: header('Posts')" ></head>-->
+
 <head>
 
 
     <!--- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8" />
-    <title>SarahBarron</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <title>Sarah Barron Home</title>
+    <!--<meta name="description" content="" />-->
+    <!--<meta name="author" content="" />-->
 
     <!-- Mobile Specific Metas
    ================================================== -->
@@ -74,7 +74,6 @@
 
                     <ul id="nav" class="nav">
                         <li><a href="#intro">Home</a></li>
-                        <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#journal">Journal</a></li>
                         <li><a href="#about">About Us</a></li>
@@ -90,7 +89,7 @@
     </header> <!-- Header End -->
 
 
-    <!-- Intro Section
+    <!-- IntroSection
     ================================================== -->
     <section id="intro">
 
@@ -117,7 +116,7 @@
                     <div class="row">
                         <div class="col full">
                             <div class="slider-text">
-                                <h2>Take a look at some of <a href="#portfolio" title="">our works</a> or <a href="#contact" title="">get in
+                                <h2>Take a look at some of <a href="#portfolio">our works</a> or <a href="#contact">get in
                                     touch</a> to discuss how we can help you.</h2>
                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
                                     deleniti eos et accusamus.</p>
@@ -133,330 +132,151 @@
     </section> <!-- Intro Section End-->
 
 
-    <!-- Services Section
-    ================================================== -->
-    <section id="services">
-
-        <div class="row section-head">
-
-            <div class="col one-third">
-                <h2>Services</h2>
-                <p class="desc">Our list of awesome services.</p>
-            </div>
-
-            <div class="col two-thirds">
-                <div class="intro">
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="services-wrapper">
-
-                <div class="col">
-                    <h2><i class="icon-desktop"></i>Webdesign</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et molestias iusto odio dignissimos.</p>
-                </div>
-
-                <div class="col">
-                    <h2><i class="icon-star"></i>Branding</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio dignissimos.</p>
-                </div>
-
-                <div class="col m-first">
-                    <h2><i class="icon-camera"></i>Photography</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et molestias quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio dignissimos.</p>
-                </div>
-
-                <div class="col first">
-                    <h2><i class="icon-globe"></i>Web Development</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio molestias dignissimos.</p>
-                </div>
-
-                <div class="col m-first">
-                    <h2><i class=" icon-list-alt"></i>User Interface</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio dignissimos.</p>
-                </div>
-
-                <div class="col">
-                    <h2><i class="icon-print"></i>Printing</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti molestias quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                        At vero eos et accusamus et iusto odio dignissimos.</p>
-                </div>
-
-            </div> <!-- Services-Wrapper End -->
-
-        </div> <!--end row -->
-
-    </section> <!-- Services Section End -->
 
 
-    <!-- Portfolio Section
-    ================================================== -->
-    <section id="portfolio">
+    <!--&lt;!&ndash; Portfolio Section-->
+    <!--================================================== &ndash;&gt;-->
+    <!--<section id="portfolio">-->
 
-        <div class="row section-head">
-            <div class="col full">
+        <!--<div class="row section-head">-->
+            <!--<div class="col full">-->
 
-                <h2>Portfolio</h2>
-                <p class="desc">Check out our latest projects.</p>
+                <!--<h2>Portfolio</h2>-->
+                <!--<p class="desc">Check out our latest projects.</p>-->
 
-                <p class="intro">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
-                </p>
+                <!--<p class="intro">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum-->
+                    <!--deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.-->
+                    <!--At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.-->
+                <!--</p>-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="row">
+        <!--<div class="row">-->
 
-            <!-- Portfolio Wrapper -->
-            <div id="portfolio-wrapper">
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-01"><img src="images/portfolio/cosmic-sneakers.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Cosmic Sneakers</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-02"><img src="images/portfolio/milk-splash.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Milk Splash</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-03"><img src="images/portfolio/eve.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Eve</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-04"><img src="images/portfolio/sneaker-splash.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Sneaker Splash</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-05"><img src="images/portfolio/judah.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Judah</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-06"><img src="images/portfolio/vector-flower.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Vector Flower</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-07"><img src="images/portfolio/clock.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Clock</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-08"><img src="images/portfolio/fields.jpg" alt=""/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Fields</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-            </div> <!-- Portfolio Wrapper End -->
+            <!--&lt;!&ndash; Portfolio Wrapper &ndash;&gt;-->
+            <!--<div id="portfolio-wrapper">-->
 
 
-        </div> <!-- End Row -->
+                <!--<div class="col portfolio-item">-->
+                    <!--<div class="item-wrap">-->
+                        <!--<a href="#" data-reveal-id="modal-05"><img src="images/portfolio/judah.jpg" alt=""/></a>-->
+                        <!--<div class="portfolio-item-meta">-->
+                            <!--<h5><a href="#">Judah</a></h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col portfolio-item">-->
+                    <!--<div class="item-wrap">-->
+                        <!--<a href="#" data-reveal-id="modal-06"><img src="images/portfolio/vector-flower.jpg" alt=""/></a>-->
+                        <!--<div class="portfolio-item-meta">-->
+                            <!--<h5><a href="#">Vector Flower</a></h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col portfolio-item">-->
+                    <!--<div class="item-wrap">-->
+                        <!--<a href="#" data-reveal-id="modal-07"><img src="images/portfolio/clock.jpg" alt=""/></a>-->
+                        <!--<div class="portfolio-item-meta">-->
+                            <!--<h5><a href="#">Clock</a></h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col portfolio-item">-->
+                    <!--<div class="item-wrap">-->
+                        <!--<a href="#" data-reveal-id="modal-08"><img src="images/portfolio/fields.jpg" alt=""/></a>-->
+                        <!--<div class="portfolio-item-meta">-->
+                            <!--<h5><a href="#">Fields</a></h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div> &lt;!&ndash; Portfolio Wrapper End &ndash;&gt;-->
+
+
+        <!--</div> &lt;!&ndash; End Row &ndash;&gt;-->
 
 
         <!-- Modal Popup
          =========================================================== -->
 
-        <!-- modal-01 -->
-        <div id="modal-01" class="reveal-modal">
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-cosmic-sneakers.jpg" alt="" />
+        <!--&lt;!&ndash; modal-05 &ndash;&gt;-->
+        <!--<div id="modal-05" class="reveal-modal">-->
 
-            <div class="description-box">
-                <h4>The Cosmic Sneakers</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>
-            </div>
+            <!--<img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />-->
 
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
+            <!--<div class="description-box">-->
+                <!--<h4>Judah</h4>-->
+                <!--<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>-->
+                <!--<span class="categories"><i class="icon-tag"></i>Photography, Web Design</span>-->
+            <!--</div>-->
 
-        </div><!-- modal-01 End -->
+            <!--<div class="link-box">-->
+                <!--<a href="http://www.behance.net">Details</a>-->
+                <!--<a class="close-reveal-modal">Close</a>-->
+            <!--</div>-->
 
-        <!-- modal-02 -->
-        <div id="modal-02" class="reveal-modal">
+        <!--</div> &lt;!&ndash; modal-05 End &ndash;&gt;-->
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-milk-splash.jpg" alt="" />
+        <!--&lt;!&ndash; modal-06 &ndash;&gt;-->
+        <!--<div id="modal-06" class="reveal-modal">-->
 
-            <div class="description-box">
-                <h4>Milk Splash</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>
-            </div>
+            <!--<img class="scale-with-grid" src="images/portfolio/modals/m-vector-flower.jpg" alt="" />-->
 
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
+            <!--<div class="description-box">-->
+                <!--<h4>Vector Flower</h4>-->
+                <!--<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>-->
+                <!--<span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>-->
+            <!--</div>-->
 
-        </div> <!-- modal-02 End -->
+            <!--<div class="link-box">-->
+                <!--<a href="http://www.behance.net">Details</a>-->
+                <!--<a class="close-reveal-modal">Close</a>-->
+            <!--</div>-->
 
-        <!-- modal-03 -->
-        <div id="modal-03" class="reveal-modal">
+        <!--</div> &lt;!&ndash; modal-06 End &ndash;&gt;-->
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-eve.jpg" alt="" />
+        <!--&lt;!&ndash; modal-07 &ndash;&gt;-->
+        <!--<div id="modal-07" class="reveal-modal">-->
 
-            <div class="description-box">
-                <h4>Eve</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Photography, Branding</span>
-            </div>
+            <!--<img class="scale-with-grid" src="images/portfolio/modals/m-clock.jpg" alt="" />-->
 
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
+            <!--<div class="description-box">-->
+                <!--<h4>Clock</h4>-->
+                <!--<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>-->
+                <!--<span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>-->
+            <!--</div>-->
 
-        </div> <!-- modal-03 End -->
+            <!--<div class="link-box">-->
+                <!--<a href="http://www.behance.net">Details</a>-->
+                <!--<a class="close-reveal-modal">Close</a>-->
+            <!--</div>-->
 
-        <!-- modal-04 -->
-        <div id="modal-04" class="reveal-modal">
+        <!--</div> &lt;!&ndash; modal-07 End &ndash;&gt;-->
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-sneaker-splash.jpg" alt="" />
+        <!--&lt;!&ndash; modal-08 &ndash;&gt;-->
+        <!--<div id="modal-08" class="reveal-modal">-->
 
-            <div class="description-box">
-                <h4>Sneaker Splash</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Photography, Branding</span>
-            </div>
+            <!--<img class="scale-with-grid" src="images/portfolio/modals/m-fields.jpg" alt="" />-->
 
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
+            <!--<div class="description-box">-->
+                <!--<h4>Fields</h4>-->
+                <!--<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>-->
+                <!--<span class="categories"><i class="icon-tag"></i>Photography</span>-->
+            <!--</div>-->
 
-        </div> <!-- modal-04 End -->
+            <!--<div class="link-box">-->
+                <!--<a href="http://www.behance.net">Details</a>-->
+                <!--<a class="close-reveal-modal">Close</a>-->
+            <!--</div>-->
 
-        <!-- modal-05 -->
-        <div id="modal-05" class="reveal-modal">
+        <!--</div> &lt;!&ndash; modal-08 End &ndash;&gt;-->
 
-            <img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />
-
-            <div class="description-box">
-                <h4>Judah</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Photography, Web Design</span>
-            </div>
-
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
-
-        </div> <!-- modal-05 End -->
-
-        <!-- modal-06 -->
-        <div id="modal-06" class="reveal-modal">
-
-            <img class="scale-with-grid" src="images/portfolio/modals/m-vector-flower.jpg" alt="" />
-
-            <div class="description-box">
-                <h4>Vector Flower</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>
-            </div>
-
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
-
-        </div> <!-- modal-06 End -->
-
-        <!-- modal-07 -->
-        <div id="modal-07" class="reveal-modal">
-
-            <img class="scale-with-grid" src="images/portfolio/modals/m-clock.jpg" alt="" />
-
-            <div class="description-box">
-                <h4>Clock</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Branding, Web Design</span>
-            </div>
-
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
-
-        </div> <!-- modal-07 End -->
-
-        <!-- modal-08 -->
-        <div id="modal-08" class="reveal-modal">
-
-            <img class="scale-with-grid" src="images/portfolio/modals/m-fields.jpg" alt="" />
-
-            <div class="description-box">
-                <h4>Fields</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                <span class="categories"><i class="icon-tag"></i>Photography</span>
-            </div>
-
-            <div class="link-box">
-                <a href="http://www.behance.net">Details</a>
-                <a class="close-reveal-modal">Close</a>
-            </div>
-
-        </div> <!-- modal-08 End -->
-
-    </section> <!-- Portfolio End -->
+    <!--</section> &lt;!&ndash; Portfolio End &ndash;&gt;-->
 
     <!-- Journal Section
     ================================================== -->
@@ -644,176 +464,9 @@
 
         </div> <!-- Process Wrap End -->
 
-        <div class="row">
-            <div class="col full"><h3>Meet The Team.</h3></div>
-        </div>
-
-
-        <!-- Team Wrap End -->
-        <div class="row team-wrap">
-
-            <div class="col one-fourth">
-
-                <img src="images/team/team-img-01.jpg" alt=""/>
-
-                <div class="member-name">
-                <h5>Naruto Uzumaki</h5>
-                <span>Director</span>
-            </div>
-
-            <ul class="member-social">
-                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
-                <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                <li><a href="#"><i class="icon-skype"></i></a></li>
-            </ul>
-
-        </div>
-
-        <div class="col one-fourth">
-
-            <img src="images/team/team-img-02.jpg" alt=""/>
-
-            <div class="member-name">
-            <h5>Sakura Haruno</h5>
-            <span>Director</span>
-        </div>
-
-        <ul class="member-social">
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-            <li><a href="#"><i class="icon-skype"></i></a></li>
-        </ul>
-
-        </div>
-
-        <div class="col one-fourth">
-
-            <img src="images/team/team-img-03.jpg" alt=""/>
-
-            <div class=member-name">
-            <h5>Sasuke Uchiha</h5>
-            <span>Senior Web Designer</span>
-        </div>
-
-        <ul class="member-social">
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-            <li><a href="#"><i class="icon-skype"></i></a></li>
-        </ul>
-
-        </div>
-
-        <div class="col one-fourth">
-
-            <img src="images/team/team-img-03.jpg" alt=""/>
-
-            <div class="member-name">
-            <h5>Shikamaru Nara</h5>
-            <span>Web Designer</span>
-        </div>
-
-        <ul class="member-social">
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-google-plus-sign"></i></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-            <li><a href="#"><i class="icon-skype"></i></a></li>
-        </ul>
-
-        </div>
-
-        </div> <!-- Team Wrap End -->
-
-        <!-- Testimonials -->
-        <div class="row">
-
-            <div class="col full section-head">
-                <h2>Testimonials</h2>
-                <p class="desc">What our clients are saying.</p>
-            </div>
-
-        </div>
-
-        <div class="row testimonials">
-
-            <div class="col half">
-
-                <div class="client-author">
-                    <img src="images/client-img.png" alt="" />
-                    <div class="name">
-                        <p>John Doe<span>Designer</span></p>
-                    </div>
-                </div>
-
-                <div class="client-cite">
-                    <p>Phasellus - ut augue at sapien bibendum bibendum amet magna. Aenean condimentum, lacus sit amet luctus lobortis,
-                        enim tellus ultrices elit, amet consequat enim elit noneas.</p>
-                </div>
-
-            </div>
-
-            <div class="col half">
-
-                <div class="client-author">
-                    <img src="images/client-img.png" alt="" />
-                    <div class="name">
-                        <p>Michael Smith<span>CEO</span></p>
-                    </div>
-                </div>
-
-                <div class="client-cite">
-                    <p>Nascetur augue hac platea enim, egestas pulvinar vut. Pulvinar cum, ac eu, tristie
-                        acus duis in dictumst non integer. Elit, sed scelerisque odio tortor, sed platea dis.
-                        Aenean condimentum, lacus sit amet luctus lobortis,
-                        enim tellus ultrices elit.</p>
-                </div>
-
-            </div>
-
-        </div> <!--  Testimonials End-->
-
 
     </section> <!-- About Section End-->
 
-    <!-- Call-to-Action Section
-    ================================================== -->
-    <section id="call-to-action">
-
-        <div class="row">
-
-            <div class="col three-fourths">
-
-                <h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Host This Template on Dreamhost.</a></h2>
-                <p>Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-                    Get <span>$50 off</span> when you sign up with the promocode <span>STYLESHOUT</span>.
-                    <!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. --></p>
-
-            </div>
-
-            <div class="col one-fourth action">
-
-                <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT" class="button">Sign Up Now</a>
-
-            </div>
-
-        </div>
-
-
-    </section> <!-- Call-to-Action Section End-->
-
-    <!-- Map Section
-    ================================================== -->
-    <section id="map">
-
-        <p class="map-error">Something went wrong... Unable to load map... Please try to enable javascript</p>
-
-    </section> <!-- Map Section End-->
 
     <!-- Contact Section
    ================================================== -->
@@ -881,24 +534,24 @@
                 <p>Nascetur augue hac platea enim, egestas pulvinar vutulvinar cum, ac eu.</p>
 
                 <p>
-                    Kreative Design Studio <br />
+                    Sarah Barron <br />
                     Anystreet Avenue 012 <br />
                     State, Anytown
                 </p>
 
                 <p>
-                    Phone: 0 123 456 789 0 <br />
-                    Email: info [@] kreativedesign.com
+                    Phone: 210.391.3588 <br />
+                    Email: none
                 </p><br />
 
                 <h3>Template Info</h3>
 
-                <p>Kreative is a free website template by <a href="http://www.styleshout.com/">styleshout.com</a>. This work is
-                    released and licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
-                        Creative Commons Attribution 3.0 License</a>, which means that you are free to
-                    use and modify it for any personal or commercial purpose. All I ask is that you give me credit by including a credit link to
-                    <a href="http://www.styleshout.com/">my website</a>.
-                </p>
+                <!--<p>Kreative is a free website template by <a href="http://www.styleshout.com/">styleshout.com</a>. This work is-->
+                    <!--released and licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">-->
+                        <!--Creative Commons Attribution 3.0 License</a>, which means that you are free to-->
+                    <!--use and modify it for any personal or commercial purpose. All I ask is that you give me credit by including a credit link to-->
+                    <!--<a href="http://www.styleshout.com/">my website</a>.-->
+                <!--</p>-->
 
             </aside>
 
@@ -914,7 +567,7 @@
 
             <div class="col g-7">
                 <ul class="copyright">
-                    <li>&copy; 2014 Kreative</li>
+                    <li> 2014 Kreative</li>
                     <li>Design by <a href="http://www.styleshout.com/" title="Styleshout">Styleshout</a></li>
                 </ul>
             </div>
@@ -936,17 +589,17 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <!--<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>-->
+    <!--<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>-->
 
-    <script src="js/scrollspy.js"></script>
-    <script src="js/jquery.flexslider.js"></script>
-    <script src="js/jquery.reveal.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
-    <script src="js/gmaps.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/smoothscrolling.js"></script>
+    <!--<script src="js/scrollspy.js"></script>-->
+    <!--<script src="js/jquery.flexslider.js"></script>-->
+    <!--<script src="js/jquery.reveal.js"></script>-->
+    <!--<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>-->
+    <!--<script src="js/gmaps.js"></script>-->
+    <!--<script src="js/init.js"></script>-->
+    <!--<script src="js/smoothscrolling.js"></script>-->
 
 </body>
 
