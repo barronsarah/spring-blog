@@ -7,16 +7,22 @@
 <body>
     <div th:replace="fragments :: navbar"></div>
 
-    <main>
-        <th:block th:each="post: ${posts}">
-            <form th:action="@{/posts/delete}" th:method="post">
-                <input type="hidden" name="id" th:value="${post.id}"/>
-                <a th:href="@{/posts/{id}(id=${post.id})}"><h4 th:text="${post.title}"></h4></a>
-                <p th:text="${post.body}"></p>
-                <button name="delete" type="submit">Delete Post</button>
-            </form>
-        </th:block>
-    </main>
+<main>
+    <th:block th:each="post: ${posts}">
+        <form th:action="@{/posts/delete}" th:method="post">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <input type="hidden" name="id" th:value="${post.id}"/>
+            <a th:href="@{/posts/{id}(id=${post.id})}"><h5 th:text="${post.title}" class="card-title"></h5></a>
+            <!--<h6 class="card-subtitle mb-2 text-muted">Date Placeholder</h6>-->
+            <p class="card-text" th:text="${post.body}"></p>
+                <a th:href="@{/posts/{id}(id=${post.id})}" class="card-link">Read</a>
+            <a href="#" class="card-link">Edit</a>
+        </div>
+    </div>
+        </form>
+    </th:block>
+</main>
 
 
     <div th:replace="fragments :: scripts"></div>
