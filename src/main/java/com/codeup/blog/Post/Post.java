@@ -15,12 +15,23 @@ public class Post {
   @Column(nullable = false, length = 1000)
   private String body;
 
+
+  @Column(nullable = true, length = 1000)
+  private String image;
+
   public Post(){ }
 
   public Post(long id, String title, String body) {
     this.id = id;
     this.title = title;
     this.body = body;
+  }
+
+  public Post(long id, String title, String body, String image) {
+    this.id = id;
+    this.title = title;
+    this.body = body;
+    this.image = image;
   }
 
   public Post(String title, String body) {
@@ -51,5 +62,13 @@ public class Post {
 
   public void setBody(String body) {
     this.body = body;
+  }
+
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 }

@@ -11,13 +11,14 @@
     <th:block th:each="post: ${posts}">
         <form th:action="@{/posts/delete}" th:method="post">
         <div class="card" style="width: 18rem;">
+            <img th:src="${'/uploads/' + post.image}" class="card-img-top" alt="..." />
         <div class="card-body">
             <input type="hidden" name="id" th:value="${post.id}"/>
             <a th:href="@{/posts/{id}(id=${post.id})}"><h5 th:text="${post.title}" class="card-title"></h5></a>
             <!--<h6 class="card-subtitle mb-2 text-muted">Date Placeholder</h6>-->
             <p class="card-text" th:text="${post.body}"></p>
-                <a th:href="@{/posts/{id}(id=${post.id})}" class="card-link">Read</a>
-            <a href="#" class="card-link">Edit</a>
+            <a th:href="@{/posts/{id}(id=${post.id})}" class="card-link"><button>Read</button></a>
+            <a th:href="@{posts/delete}" class="card-link"><button>Delete</button></a>
         </div>
     </div>
         </form>
