@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <head th:replace="fragments :: header('All Posts')"></head>
+
+</head>
+<body>
+    <div th:replace="fragments :: navbar"></div>
+
+    <main>
+        <th:block th:each="post: ${posts}">
+            <form th:action="@{/posts/delete}" th:method="post">
+                <input type="hidden" name="id" th:value="${post.id}"/>
+                <a th:href="@{/posts/{id}(id=${post.id})}"><h4 th:text="${post.title}"></h4></a>
+                <p th:text="${post.body}"></p>
+                <button name="delete" type="submit">Delete Post</button>
+            </form>
+        </th:block>
+    </main>
+
+
+    <div th:replace="fragments :: scripts"></div>
+</body>
+</html>
