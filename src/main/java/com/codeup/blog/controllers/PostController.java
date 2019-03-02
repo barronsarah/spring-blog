@@ -5,9 +5,11 @@ import com.codeup.blog.Post.PostRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -83,29 +85,36 @@ public class PostController {
 //  }
 
     @GetMapping("/posts/create")
-  public String reateForm(Model model){
+  public String createForm(Model model){
     model.addAttribute("post", new Post());
     return "/posts/create";
   }
 
   @PostMapping("posts/create")
-  public String sendPost(@ModelAttribute Post post, @RequestParam(name="file") MultipartFile uploadedFile, Model model ){
+  public String sendPost(@Valid Post post, Errors validation, @RequestParam(name="file") MultipartFile uploadedFile, Model model ){
 //    Post post = new Post(title, body);
 
     String filename = uploadedFile.getOriginalFilename();
     String filepath = Paths.get(uploadPath, filename).toString();
     File destinationFile = new File(filepath);
+
     try {
       uploadedFile.transferTo(destinationFile);
       model.addAttribute("message", "File successfully uploaded!");
     } catch (IOException e) {
       e.printStackTrace();
       model.addAttribute("message", "Oops! Something went wrong! " + e);
+
     }
-//    return "fileupload";
+    if(validation.hasErrors()) {
+      model.addAttribute("errors", validation);
+      model.addAttribute("post", post);
+      return "posts/create";
+    }
     post.setImage(filename);
     postDao.save(post);
     return "redirect:/posts";
+
   }
 
 

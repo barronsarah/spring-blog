@@ -1,5 +1,7 @@
 package com.codeup.blog.Post;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,11 @@ public class Post {
   private long id;
 
   @Column(nullable = false, length = 125)
+  @NotBlank(message = "Please enter a title")
   private String title;
 
   @Column(nullable = false, length = 1000)
+  @NotBlank(message = "Can not post with no text!")
   private String body;
 
 
