@@ -22,9 +22,13 @@
                 <textarea class="form-control" th:field="*{body}" id="body" rows="8" cols="14"></textarea>
                 <p th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p><br/>
             </div>
+                <br/>
+                    <p>
                 <label for="file">Don't forget to upload an image!</label>
+                        <br/>
                 <input id="file" name="file" type="file" />
             <button type="submit" class="btn btn-primary" value="upload">Save Post</button>
+                    </p>
             </div>
             </div>
         </form>

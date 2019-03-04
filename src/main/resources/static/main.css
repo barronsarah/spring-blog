@@ -1,0 +1,83 @@
+
+body {
+    box-sizing: border-box;
+    margin: 2% 1%;
+    background-color: #bad3ed;
+    padding-top: 60px;
+}
+
+
+.navbar{
+    background-color: #bad3ed;
+    z-index: 2;
+    position: fixed;
+    top: -11px;
+    width: 100%;
+
+}
+
+.navbar-brand {
+    color: #e21ba0;
+    font-weight: bold;
+    font-size: 2.25rem;
+    font-style: oblique;
+    text-shadow: 6px 6px 0px #ffdcdce0;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 1.15rem;
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.nav-link:hover{
+    color: #f296ff;
+}
+
+.card-form, .card{
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+
+button, .card-button {
+    display: inline-block;
+    width: 7em;
+    height: 2.75em;
+    /*left: 50vw;*/
+    /*top: 50vh;*/
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.35vw;
+    letter-spacing: 0.1em;
+    color: #e8e8e8;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: linear-gradient(45deg, #d350db, teal, #d350db);
+    background-size: 400% 400%;
+    box-shadow: 0.65vw 0.60vw 0 #f37a7a96;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    margin-top: 4px;
+}
+
+    button:hover {
+     animation: gradient 10s ease infinite;
+     font-size: 1.6vw;
+     box-shadow: 0.2vw 0.2vw 0 lightcoral;
+    }
+
+
+@keyframes gradient {
+    50% {
+        background-position: 100% 0;
+    }
+}
+

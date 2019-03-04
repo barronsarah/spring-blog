@@ -1,7 +1,7 @@
 package com.codeup.blog.controllers;
 
-import com.codeup.blog.Post.Post;
-import com.codeup.blog.Post.PostRepository;
+import com.codeup.blog.posts.Post;
+import com.codeup.blog.posts.PostRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +13,6 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.text.AttributedString;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class PostController {
@@ -69,9 +66,26 @@ public class PostController {
 
   @PostMapping("posts/edit/{id}")
   public String sendEdit(@PathVariable long id,
-              @RequestParam(name="title") String title,
-              @RequestParam(name="body") String body){
+                          @RequestParam(name="title") String title,
+                          @RequestParam(name="body") String body,
+                          @RequestParam(name = "file") MultipartFile uploadedFile,
+                          Model model){
+
         Post post = postDao.findOne(id);
+
+    String filename = uploadedFile.getOriginalFilename();
+    String filepath = Paths.get(uploadPath, filename).toString();
+    File destinationFile = new File(filepath);
+
+    try {
+      uploadedFile.transferTo(destinationFile);
+      model.addAttribute("message", "File successfully uploaded!");
+    } catch (IOException e) {
+      e.printStackTrace();
+      model.addAttribute("message", "Oops! Something went wrong! " + e);
+    }
+
+        post.setImage(filename);
         post.setTitle(title);
         post.setBody(body);
         postDao.save(post);
@@ -79,10 +93,6 @@ public class PostController {
   }
 
 
-//  @GetMapping("posts/create")
-//  public String createForm(){
-//    return "posts/create";
-//  }
 
     @GetMapping("/posts/create")
   public String createForm(Model model){
@@ -91,8 +101,10 @@ public class PostController {
   }
 
   @PostMapping("posts/create")
-  public String sendPost(@Valid Post post, Errors validation, @RequestParam(name="file") MultipartFile uploadedFile, Model model ){
-//    Post post = new Post(title, body);
+  public String sendPost(@Valid Post post, Errors validation,
+                         @RequestParam(name="file") MultipartFile uploadedFile,
+                         Model model ){
+//    posts post = new posts(title, body);
 
     String filename = uploadedFile.getOriginalFilename();
     String filepath = Paths.get(uploadPath, filename).toString();
