@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments :: header('Posts')" ></head>
+
+<body>
+    <div th:replace="fragments :: navbar"></div>
+    <br />
+    <h2>Hi There!</h2>
+
+    <main>
+       <h6><span th:text="${homeMessage}"></span> </h6>
+    </main>
+
+
+    <div th:replace="fragments :: scripts"></div>
+</body>
+</html>

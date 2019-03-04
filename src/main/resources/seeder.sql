@@ -1,0 +1,1 @@
+INSERT INTO posts(body, image, title) VALUE ("the bootcamp that gave me a new outlook on life", "sunrise.jpeg", "A whole new world" );

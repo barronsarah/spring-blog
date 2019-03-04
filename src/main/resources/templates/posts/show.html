@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <head th:replace="fragments :: header('Show Post')" ></head>
+    
+</head>
+<body>
+    <div th:replace="fragments :: navbar"></div>
+
+    <main>
+        <h1 th:text="${post.title}"></h1>
+        <p th:text="${post.body}"></p>
+        <form th:action="@{/posts/edit/{id} (id=${post.id})}" method="get"><button type="submit">Edit</button></form>
+    </main>
+
+    
+
+    <div th:replace="fragments :: scripts"></div>
+</body>
+</html>
