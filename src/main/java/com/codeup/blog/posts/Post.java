@@ -1,5 +1,6 @@
-package com.codeup.blog.Post;
+package com.codeup.blog.posts;
 
+import com.codeup.blog.users.User;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -7,6 +8,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="posts")
 public class Post {
+
+  @ManyToOne @JoinColumn (name = "user_id")
+  private User user;
+
   @GeneratedValue
   @Id
   private long id;
@@ -19,30 +24,29 @@ public class Post {
   @NotBlank(message = "Can not post with no text!")
   private String body;
 
-
   @Column(nullable = true, length = 1000)
   private String image;
 
+
+
+
   public Post(){ }
 
-  public Post(long id, String title, String body) {
-    this.id = id;
-    this.title = title;
-    this.body = body;
-  }
 
-  public Post(long id, String title, String body, String image) {
+  public Post(long id, String title, String body, String image, User user) {
     this.id = id;
     this.title = title;
     this.body = body;
     this.image = image;
+    this.user= user;
   }
 
-  public Post(String title, String body) {
+  public Post(String title, String body, String image, User user) {
     this.title = title;
     this.body = body;
+    this.image = image;
+    this.user = user;
   }
-
 
   public long getId() {
     return id;
@@ -74,5 +78,12 @@ public class Post {
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public User getUser() {
+    return user;
+  }
+  public void setUser(User user) {
+    this.user = user;
   }
 }

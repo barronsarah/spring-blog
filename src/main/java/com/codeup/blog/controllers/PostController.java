@@ -1,7 +1,11 @@
 package com.codeup.blog.controllers;
 
-import com.codeup.blog.Post.Post;
-import com.codeup.blog.Post.PostRepository;
+import com.codeup.blog.posts.Post;
+import com.codeup.blog.posts.PostRepository;
+import com.codeup.blog.services.EmailService;
+import com.codeup.blog.users.User;
+import com.codeup.blog.users.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,22 +17,24 @@ import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.text.AttributedString;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class PostController {
 
+  private final PostRepository postDao;
+
   @Value("${file-upload-path}")
   private String uploadPath;
 
-  private final PostRepository postDao;
-
-  public PostController(PostRepository postDao) {
+  public PostController(PostRepository postDao){
     this.postDao = postDao;
   }
 
+  @Autowired
+  private EmailService emailService;
+
+  @Autowired
+  private UserRepository userRepo;
 
   @GetMapping("/")
   public String homeMessage(Model model){
@@ -48,6 +54,7 @@ public class PostController {
   @GetMapping("posts/{id}")
   public String getPost(@PathVariable long id, Model model){
     Post post = postDao.findOne(id);
+    model.addAttribute("user", post.getUser());
     model.addAttribute("post", post);
     return "posts/show";
   }
@@ -79,11 +86,6 @@ public class PostController {
   }
 
 
-//  @GetMapping("posts/create")
-//  public String createForm(){
-//    return "posts/create";
-//  }
-
     @GetMapping("/posts/create")
   public String createForm(Model model){
     model.addAttribute("post", new Post());
@@ -91,12 +93,13 @@ public class PostController {
   }
 
   @PostMapping("posts/create")
-  public String sendPost(@Valid Post post, Errors validation, @RequestParam(name="file") MultipartFile uploadedFile, Model model ){
-//    Post post = new Post(title, body);
+  public String sendPost(@Valid Post post, Errors validation, @RequestParam(name="file") MultipartFile uploadedFile, Model model){
+
 
     String filename = uploadedFile.getOriginalFilename();
     String filepath = Paths.get(uploadPath, filename).toString();
     File destinationFile = new File(filepath);
+    User user = userRepo.findOne(1L);
 
     try {
       uploadedFile.transferTo(destinationFile);
@@ -112,9 +115,12 @@ public class PostController {
       return "posts/create";
     }
     post.setImage(filename);
+    post.setUser(user);
     postDao.save(post);
-    return "redirect:/posts";
 
+    emailService.prepareAndSend(post, "posts successfully created!", "You just posted a new blog entry. Go to your profile to view your whole collection. - Admin Team");
+
+    return "redirect:/posts";
   }
 
 
