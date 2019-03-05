@@ -1,6 +1,6 @@
-package com.codeup.blog.posts;
+package com.codeup.blog.models;
 
-import com.codeup.blog.users.User;
+import com.codeup.blog.models.User;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -28,10 +28,7 @@ public class Post {
   private String image;
 
 
-
-
   public Post(){ }
-
 
   public Post(long id, String title, String body, String image, User user) {
     this.id = id;

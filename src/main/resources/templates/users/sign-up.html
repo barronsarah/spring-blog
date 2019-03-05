@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: header('Sign Up')" ></head>
+<div th:replace="fragments :: navbar"></div>
+
+<body>
+    <h2 class="split-header">Create an account</h2>
+    <form th:action="@{/sign-up}" method="POST" th:object="${user}">
+        <label for="username">Username</label>
+        <input id="username" th:field="*{username}" />
+
+        <label for="email">Email</label>
+        <input id="email" th:field="*{email}" />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" th:field="*{password}" />
+
+        <input value="Sign me up!" type="submit" class="card-button" />
+    </form>
+
+    <div th:replace="fragments :: scripts"></div>
+</body>
+</html>

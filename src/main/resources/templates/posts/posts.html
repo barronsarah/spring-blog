@@ -6,8 +6,8 @@
 </head>
 <body>
     <div th:replace="fragments :: navbar"></div>
-
     <main>
+        <h3 class="split-header">Blog posts...</h3>
         <th:block th:each="post: ${posts}">
             <div class="card" style="width: 25rem">
                 <img th:src="${'/uploads/' + post.image}" class="card-img-top" alt="blog header img" />
