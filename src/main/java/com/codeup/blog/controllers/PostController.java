@@ -1,12 +1,13 @@
 package com.codeup.blog.controllers;
 
-import com.codeup.blog.posts.Post;
-import com.codeup.blog.posts.PostRepository;
+import com.codeup.blog.models.Post;
+import com.codeup.blog.repositories.PostRepository;
 import com.codeup.blog.services.EmailService;
-import com.codeup.blog.users.User;
-import com.codeup.blog.users.UserRepository;
+import com.codeup.blog.models.User;
+import com.codeup.blog.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -36,11 +37,22 @@ public class PostController {
   @Autowired
   private UserRepository userRepo;
 
+
   @GetMapping("/")
-  public String homeMessage(Model model){
-    String message = "I'm Sarah. Get to know me!";
-    model.addAttribute("homeMessage", message);
+  public String homeMessage(){
     return "posts/index";
+  }
+
+//  @GetMapping("/")
+//  public String homeMessage(Model model){
+//    String message = "I'm Sarah. Get to know me!";
+//    model.addAttribute("homeMessage", message);
+//    return "posts/index";
+//  }
+
+  @GetMapping("/resume")
+  public String showResume(){
+    return "posts/resume";
   }
 
   @GetMapping("/posts")
@@ -76,13 +88,38 @@ public class PostController {
 
   @PostMapping("posts/edit/{id}")
   public String sendEdit(@PathVariable long id,
-              @RequestParam(name="title") String title,
-              @RequestParam(name="body") String body){
-        Post post = postDao.findOne(id);
-        post.setTitle(title);
-        post.setBody(body);
-        postDao.save(post);
-        return "redirect:/posts/" + id;
+                         @RequestParam(name="title") String title,
+                         @RequestParam(name="body") String body,
+                         @RequestParam(name = "file") MultipartFile uploadedFile, Model model){
+
+    Post post = postDao.findOne(id);
+
+    User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    User userDB = userRepo.findOne(sessionUser.getId());
+
+    String filename = uploadedFile.getOriginalFilename();
+    String filepath = Paths.get(uploadPath, filename).toString();
+    File destinationFile = new File(filepath);
+
+    try {
+      uploadedFile.transferTo(destinationFile);
+      model.addAttribute("message", "File successfully uploaded!");
+    } catch (IOException e) {
+      e.printStackTrace();
+      model.addAttribute("message", "Oops! Something went wrong! " + e);
+    }
+
+    post.setImage(filename);
+    post.setTitle(title);
+    post.setBody(body);
+    post.setUser(userDB);
+    postDao.save(post);
+    return "redirect:/posts/" + id;
+  }
+
+  @GetMapping("posts/cancel")
+  public String actionCancel(){
+    return "redirect:/posts";
   }
 
 
@@ -99,7 +136,10 @@ public class PostController {
     String filename = uploadedFile.getOriginalFilename();
     String filepath = Paths.get(uploadPath, filename).toString();
     File destinationFile = new File(filepath);
-    User user = userRepo.findOne(1L);
+
+    User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    User userDB = userRepo.findOne(sessionUser.getId());
+
 
     try {
       uploadedFile.transferTo(destinationFile);
@@ -115,7 +155,7 @@ public class PostController {
       return "posts/create";
     }
     post.setImage(filename);
-    post.setUser(user);
+    post.setUser(userDB);
     postDao.save(post);
 
     emailService.prepareAndSend(post, "posts successfully created!", "You just posted a new blog entry. Go to your profile to view your whole collection. - Admin Team");

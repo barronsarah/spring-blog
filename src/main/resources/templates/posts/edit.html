@@ -9,9 +9,11 @@
     <h4>Edit Post...</h4>
 
     <main>
+        <h3 class="split-header">Edit post...</h3>
         <form th:action="@{/posts/edit/{id}(id=${post.id})}" th:method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group col-8 align-self-center">
+                    <img class="show-image" th:src="${'/uploads/' + post.image}" width="700em" height="350em"/>
                     <label for="title">Title</label>
                     <input type="text" th:value="${post.title}" class="form-control" name="title" id="title" />
                 </div><br/>

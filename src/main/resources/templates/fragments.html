@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
 
 <!--Header fragment-->
 <head th:fragment="header(title)">
@@ -32,26 +32,31 @@
                         <a class="nav-link" href="#">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Resume</a>
+                        <a class="nav-link" href="/resume">Resume</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Posts
+                            Blog
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/posts">All Posts</a>
                             <a class="dropdown-item" href="/posts/create">Create a Post</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <!--<a class="dropdown-item" href="#">Something else here</a>-->
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Me</a>
                     </li>
-                    <!--<li>-->
-                    <!--<form th:action="@{/logout}" th:method="post">-->
-                    <!--<button class="btn-link btn" style="margin-top: 8px">Logout</button>-->
-                    <!--</form>-->
-                    <!--</li>-->
+                    <li sec:authorize="isAuthenticated()">
+                        <form th:action="@{/logout}" th:method="post">
+                            <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+                        </form>
+                    </li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <form th:action="@{/login}" th:method="get">
+                            <button class="btn-link btn" style="margin-top: 8px">Login</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>

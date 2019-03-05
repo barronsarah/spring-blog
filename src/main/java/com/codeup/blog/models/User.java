@@ -1,6 +1,4 @@
-package com.codeup.blog.users;
-
-import com.codeup.blog.posts.Post;
+package com.codeup.blog.models;
 
 import javax.persistence.*;
 import java.util.List;
@@ -40,6 +38,13 @@ public class User {
   }
 
   public User() {
+  }
+
+  public User(User copy) {
+    id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+    email = copy.email;
+    username = copy.username;
+    password = copy.password;
   }
 
   public long getId() {
