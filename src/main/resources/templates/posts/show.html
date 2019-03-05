@@ -8,6 +8,7 @@
     <div th:replace="fragments :: navbar"></div>
 
     <main>
+        <img class="show-image" th:src="${'/uploads/' + post.image}" width="700em" height="350em"/>
         <h1 th:text="${post.title}"></h1>
         <p th:text="${post.body}"></p>
         <p th:text="${user.email}"></p>

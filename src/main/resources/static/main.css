@@ -79,3 +79,7 @@ button:hover {
         background-position: 100% 0;
     }
 }
+
+.show-image{
+    align-content: center;
+}
