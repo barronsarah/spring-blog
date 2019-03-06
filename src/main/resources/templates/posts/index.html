@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<head th:replace="fragments :: header('Home')" ></head>
+<head th:replace="fragments :: header('Home')"></head>
 
 <body>
     <div th:replace="fragments :: navbar"></div>
     <main>
-    <br />
-    <h2>Get to know me</h2>
+        <br/>
+        <h2>Get to know me</h2>
 
 
         <!--<img src="images/profile" height="" width=""/>-->
 
         <h3 class="split-header">About me...</h3>
-        <p>Personal statement:<br/>
-            I portray happiness, authenticity, and resilience in all I do.
-        </p>
-        <p>
-            With a background in sociology, in conjunction with my personal curiosity, inspires my persistent quest for understanding the development, structure, and functioning parts of programming. My resilience and problem-solving nature drives my passion for being able to contribute to, and be part of the ever-evolving technology field.
-        </p>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <p>Personal statement:<br/>
+                        I portray happiness, authenticity, and resilience in all I do.
+                    </p>
+                    <p>
+                        My background in sociology, in conjunction with my personal curiosity, inspires my persistent quest for understanding the development, structure, and functioning parts of programming. My resilience and problem-solving nature drives my passion for being able to contribute to, and be part of the ever-evolving technology field.
+                    </p>
+                </div>
+            </div>
+        </div>
 
 
     </main>

@@ -8,9 +8,13 @@
     <div th:replace="fragments :: navbar"></div>
     <main>
         <h3 class="split-header">Blog posts...</h3>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
         <th:block th:each="post: ${posts}">
-            <div class="card" style="width: 25rem">
-                <img th:src="${'/uploads/' + post.image}" class="card-img-top" alt="blog header img" />
+                <div class="card" style="width: 25rem">
+                    <img th:src="${'/uploads/' + post.image}" class="card-img-top" alt="blog header img" />
                 <div class="card-body">
                     <input type="hidden" name="user" th:value="${post.getUser().getEmail()}"/>
                     <a th:href="@{/posts/{id}(id=${post.id})}"><h5 th:text="${post.title}" class="card-title"></h5></a>
@@ -22,10 +26,13 @@
                     </form>
                     <form th:action="@{/posts/delete}" th:method="post">
                         <button th:value="${post.id}" th:name="id" class="card-button">Delete</button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </th:block>
+            </div>
+          </div>
+        </div>
     </main>
 
 
