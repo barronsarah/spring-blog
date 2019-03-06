@@ -18,7 +18,7 @@
 <body>
     <!--Navbar fragment-->
     <th:block th:fragment="navbar">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-md navbar-light">
             <a class="navbar-brand" id="navbar-logo" href="/">SBarron</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,12 +49,12 @@
                     </li>
                     <li sec:authorize="isAuthenticated()">
                         <form th:action="@{/logout}" th:method="post">
-                            <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+                            <button class="btn-link btn nav-link">Logout</button>
                         </form>
                     </li>
                     <li sec:authorize="!isAuthenticated()">
                         <form th:action="@{/login}" th:method="get">
-                            <button class="btn-link btn" style="margin-top: 8px">Login</button>
+                            <button class="btn-link btn nav-link">Login</button>
                         </form>
                     </li>
                 </ul>
