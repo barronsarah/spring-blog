@@ -4,38 +4,30 @@
     <head th:replace="fragments :: header('Resume | Sarah Barron')"></head>
 
 </head>
-<body>
+<body id="resume-bg">
     <div th:replace="fragments :: navbar"></div>
 
 
     <h1>SARAH BARRON</h1>
-    <h5>&lt;Software Developer/&gt;</h5>
+    <h5 class="split-header">&lt;Software Developer/&gt;</h5>
 
-    <h4>ABOUT ME</h4>
-    A background in sociology, in conjunction with my
-    personal curiosity, inspires my persistent quest for
-    understanding the development, structure, and
-    functioning parts of programming. My resilience and problem-solving nature drives my passion for being able to
-    contribute to, and be part of the ever-evolving technology field.
+    <h4>{ABOUT ME}</h4>
+    A background in sociology, in conjunction with my personal curiosity, inspires my persistent quest for understanding the development, structure, and functioning parts of programming. My resilience and problem-solving nature drives my passion for being able to contribute to, and be part of the ever-evolving technology field.
 
 
-    <h4>EDUCATION</h4>
+    <h4>{EDUCATION}</h4>
 
     <p>Codeup 2019 <br/>
-        Full Stack Web Development Bootcamp
+        Certificate of Completion-Full Stack Web Development Bootcamp
 
-        A fully-immersive project-based, and
-        intensive 18 week full stack Java career
-        accelerator that provides students with 600+
-        hours of expert instruction in software
-        development.</p>
+        A fully-immersive project-based, and intensive 18 week full stack Java career accelerator that provides students with 600+ hours of expert instruction in software development.</p>
     <br/>
 
     <p>University of Texas at San Antonio 2012 <br/>
         Bachelor of Arts- Sociology</p><br/>
 
 
-    <h4>SKILLS</h4>
+    <h4>{SKILLS}</h4>
     <p>
         HTML5 | CSS3 | BOOTSTRAP | JAVA-EE | BOOTSTRAP |
         JQUERY | JAVASCRIPT-ES6 | MYSQL | SPRING BOOT |
@@ -43,25 +35,21 @@
     </p>
 
 
-    <h4>PROJECTS</h4>
+    <h4>{PROJECTS}</h4>
 
-    <h6>MENTOR_LISTER</h6>
+    <h6>Mentor_Listor</h6>
     <a href="https://pink-ads.github.io/mentor-listor/">https://pink-ads.github.io/mentor-listor/</a>
-    <p>Full stack web application using the MVC design
-        pattern with Java to interact with a MySQL database
-        and dynamically display html pages</p>
+    <p>Full stack web application using the MVC design pattern with Java to interact with a MySQL database and dynamically display html pages</p>
 
 
-    <h6>THE_COFFEE_PROJECT</h6>
-    <p>Javascript rendered web app with dynamic
-        search using jQuery</p>
+    <h6>The_Coffee_Project</h6>
+    <p>Javascript rendered web app with dynamic search using jQuery</p>
 
-    <h6>MOVIE_APPLICATION</h6>
-    <p>Single page interactive movie application utilizing
-        Node.js to dynamically update html using AJAX requests</p>
+    <h6>Movie_Application</h6>
+    <p>Single page interactive movie application utilizing Node.js to dynamically update html using AJAX requests</p>
 
 
-    <h4>WORK HISTORY</h4>
+    <h4>{WORK HISTORY}</h4>
 
     <h6>CVS Caremark</h6>
     <p>Quality Coordinator- Lead
@@ -71,8 +59,8 @@
         Recommended and implemented procedural
         policy changes to improve business operations.</p>
 
-    <h6>SECURITY SERVICE FEDERAL
-        CREDIT UNION</h6>
+    <h6>Security Service Federal
+        Credit Union</h6>
     <p>Member Relationship Representative
         May 2013 – July 2014
         Independently resolved problems and
@@ -88,8 +76,7 @@
         company and Medicare Part D CMS regulatory
         agency standards.</p>
 
-    <h6>STUDIO 2410- SPORTS
-        PHOTOGRAPHY STUDIO</h6>
+    <h6>STUDIO 2410- Sports Photography Studio</h6>
     <p>Business Manager and Supervisor
         Mar 2011 – Aug 2013
         Directed and coordinated all business needs
@@ -101,9 +88,9 @@
         texts, and email.</p>
 
 
-    <p>github.com/barronsarah</p>
-    <p>linkedin.com/in/sarah-e-barron</p>
-    <p>s.barron2338@gmail.com</p>
+    <p><a href="github.com/barronsarah"><i class="fab fa-github"></i>GitHub</a></p>
+    <p><a href="linkedin.com/in/sarah-e-barron"><i class="fab fa-linkedin"></i>LinkedIn</a></p>
+    <p><i class="fas fa-mail-bulk"></i>s.barron2338@gmail.com</p>
 
 
     <div th:replace="fragments :: scripts"></div>
