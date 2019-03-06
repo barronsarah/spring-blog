@@ -82,7 +82,7 @@ body {
 
 .card-button:hover {
     animation: gradient 10s ease infinite;
-    font-size: 1.6vw;
+    font-size: .90em;
     box-shadow: 0.2vw 0.2vw 0 lightcoral;
 }
 
