@@ -7,7 +7,7 @@
     <h2 class="split-header">Create an account</h2>
     <br/>
     <form th:action="@{/sign-up}" method="POST" th:object="${user}">
-        <div class="form-row">
+        <div class="form-row mx-auto">
             <div class="col-10">
             <div class="form-group col-5 align-self-center">
         <label for="username">Username</label>
@@ -24,7 +24,7 @@
         <input id="password" type="password" th:field="*{password}" class="form-control" />
            </div>
             <br/>
-        <input value="Sign me up!" type="submit" class="card-button" />
+        <input value="Sign me up!" type="submit" class="card-button text-wrap" />
         </div>
         </div>
     </form>

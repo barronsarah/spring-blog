@@ -100,3 +100,6 @@ body {
 #resume-bg{
 }
 
+.text-overflow {
+    text-overflow: ellipsis;
+}

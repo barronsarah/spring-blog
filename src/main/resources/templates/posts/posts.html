@@ -19,7 +19,7 @@
                     <input type="hidden" name="user" th:value="${post.getUser().getEmail()}"/>
                     <a th:href="@{/posts/{id}(id=${post.id})}"><h5 th:text="${post.title}" class="card-title"></h5></a>
                     <!--<h6 class="card-subtitle mb-2 text-muted">Date Placeholder</h6>-->
-                    <p class="card-text" th:text="${post.body}"></p>
+                    <p class="card-text text-overflow" th:text="${post.body}"></p>
                     <a th:href="@{/posts/{id}(id=${post.id})}" ><button class="card-button">Read</button></a>
                     <form th:action="@{/posts/edit/{id}(id=${post.id})}" th:method="get">
                         <button th:value="${post.id}" th:name="id" class="card-button">Edit</button>
