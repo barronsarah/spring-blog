@@ -1,11 +1,3 @@
-body {
-    box-sizing: border-box;
-    margin: 2% 1%;
-    background-color: #bad3ed;
-    padding-top: 60px;
-}
-
-
 .navbar{
     background-color: #bad3ed;
     z-index: 2;
